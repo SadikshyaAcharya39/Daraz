@@ -1,6 +1,7 @@
 package pageobject;
 
 
+import org.checkerframework.checker.index.qual.PolyUpperBound;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -46,7 +47,19 @@ public class HomePage {
     // Using XPath with "OR" Operator
     public By languageTranslationLocator = By.xpath("//div[@class='top-links-item white' or @id='topActionSwitchLang']");
 
+    // Using XPath with inner text   teext()
+    public By saveMoreOnAppLocator = By.xpath("//span[text()='Save More on App']");
 
-    // Using XPath with inner text
+    // Using contains()
+    public By loginButton = By.xpath("//a[contains(@data-spm-click,'gostr=/lzdpub.header.tbar;locaid=login')]");
+
+    // USING CONTAINS()
+//    public By loginForm = By.xpath("//div[contains(@class,'index_module_loginWrapper__ff031001')]");
+
+    // using starts-with()
+    public By loginForm = By.xpath("//div[starts-with(@class,'index_module_loginWrapper__ff031001')]");
+
+    //using chained xpath
+    public By cartIconButton = By.xpath("//span[@class='cart-icon-daraz']");
 
 }

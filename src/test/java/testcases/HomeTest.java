@@ -38,6 +38,9 @@ public class HomeTest {
         // Hit the URL
         driver.get(properties.getProperty("baseURL"));
 
+        // window maximize
+        driver.manage().window().maximize();
+
         // Sending the driver
         homePage = new HomePage(driver);
     }
@@ -68,9 +71,36 @@ public class HomeTest {
     }
 
     @Test
-    // Using xpath with Inner Text
-    public void verifying() {
+    // using text method -- Inner Text
+    public void verifyingSaveMoreOnAppButton() {
+//        WebElement saveMoreOnApp = driver.findElement(homePage.saveMoreOnAppLocator);
+//        saveMoreOnApp.click();
+
+//       boolean status = driver.findElement(homePage.saveMoreOnAppLocator).isDisplayed();
+//        System.out.println(status);
+
+        String value = driver.findElement(homePage.saveMoreOnAppLocator).getText();
+        System.out.println(value);
+    }
+
+    @Test
+    public void verifyingLoginButton(){
+        // Using contains
+        WebElement loginButton = driver.findElement(homePage.loginButton);
+        loginButton.click();
+
+        // Using start-with
+         boolean loginFormStatus = driver.findElement(homePage.loginForm).isDisplayed();
+         System.out.println(loginFormStatus);
 
     }
+
+    @Test
+    public void verifyingCartFunctionality(){
+        //using chained xpath
+        driver.findElement(homePage.cartIconButton).click();
+    }
+
+
 
 }
