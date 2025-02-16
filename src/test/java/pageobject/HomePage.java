@@ -62,4 +62,31 @@ public class HomePage {
     //using chained xpath
     public By cartIconButton = By.xpath("//span[@class='cart-icon-daraz']");
 
+
+    public By buttonLocator = By.xpath("//span[@class='user-actions-ico']//*[name()='svg']");
+
+    public By chooseOptionsLocator = By.xpath("//span[text()='Register']");
+
+//    public By selectRegister = By.xpath("//span[text()='Register']");
+
+    // XPath with single attribute
+    public By firstNameTextBoxLocator = By.xpath("//input[@id='FirstName']");
+
+    // XPath with multiple attributes
+    public By lastNameTextBoxLocator = By.xpath("//input[@id='LastName'][@name='LastName']");
+
+    // XPath with AND Operator Text
+    public By emailTextBoxLocator = By.xpath("//input[@id='Email' and @name='Email']");
+
+    public By confirmEmailTextBoxLocator = By.id("ConfirmEmail");
+
+    public By userNameTextBoxLocator = By.cssSelector("#id='Username'");
+
+    public By countryDropDownLocator = By.cssSelector("#id='CountryId'");
+
+    public By dropDownItemSelected = By.xpath("//option[innerText()='Nepal']");
+
+    public By passwordTextBoxLocator = By.cssSelector("#id='Password'");
+
+    public By confirmPasswordTextBoxLocator = By.cssSelector("#id='ConfirmPassword'");
 }
